@@ -9,8 +9,7 @@ class MainController extends Controller
 {
     public function home()
     {
-        $people = Person::all();
 
-        return view('pages.home', compact('people'));
+        return view('pages.home');
     }
 }
