@@ -18,6 +18,7 @@
                 <a href="{{ route('person.delete', $person) }}">X</a>
             </li>
         @endforeach
+        
     </ul>
 
 @endsection

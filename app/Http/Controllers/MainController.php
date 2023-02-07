@@ -50,7 +50,7 @@ class MainController extends Controller
         $data = $request->validate([
             'first_name' => 'required|string|max:32',
             'last_name' => 'required|string|max:32',
-            'date_of_birt' => 'required|date',
+            'date_of_birth' => 'required|date',
             'height' => 'nullable|integer|min:50|max:200'
         ]);
 
@@ -58,7 +58,37 @@ class MainController extends Controller
 
         $person->first_name = $data['first_name'];
         $person->last_name = $data['last_name'];
-        $person->date_of_birt = $data['date_of_birt'];
+        $person->date_of_birth = $data['date_of_birth'];
+        $person->height = $data['height'];
+
+        $person->save();
+
+        return redirect()->route('home');
+    }
+
+    //EDIT
+    public function personEdit(Person $person)
+    {
+
+        return view('pages.edit', compact('person'));
+    }
+
+    public function update(Request $request, Person $person)
+    {
+
+        // No validation
+        // $data = $request -> all();
+
+        // With validation
+        $data = $request->validate([
+            'first_name' => 'required|string|max:32',
+            'last_name' => 'required|string|max:32',
+            'date_of_birth' => 'required|date',
+            'height' => 'nullable|integer|min:50|max:200'
+        ]);
+        $person->first_name = $data['first_name'];
+        $person->last_name = $data['last_name'];
+        $person->date_of_birth = $data['date_of_birth'];
         $person->height = $data['height'];
 
         $person->save();

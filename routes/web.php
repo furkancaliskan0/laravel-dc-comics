@@ -23,11 +23,6 @@ Route::get('/', [MainController::class, 'home'])
 //SHOW
 Route::get('/people/show/{person}', [MainController::class, 'personShow'])
     ->name('person.show');
-
-//DELETE
-Route::get('/person/delete/{person}', [MainController::class, 'personDelete'])
-    ->name('person.delete');
-
 //CREATE
 Route::get('/person/create', [MainController::class, 'personCreate'])
     ->name('person.create');
@@ -35,3 +30,16 @@ Route::get('/person/create', [MainController::class, 'personCreate'])
 //STORE
 Route::post('/person/store', [MainController::class, 'personStore'])
     ->name('person.store');
+
+//DELETE
+Route::get('/person/delete/{person}', [MainController::class, 'personDelete'])
+    ->name('person.delete');
+
+//EDIT
+Route::get('/person/edit/{person}', [MainController::class, 'personEdit'])
+    ->name('person.edit');
+
+
+//UPGRADE
+Route::post('/person/update/{person}', [MainController::class, 'personUpdate'])
+    ->name('person.update');

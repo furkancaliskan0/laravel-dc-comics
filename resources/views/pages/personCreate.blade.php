@@ -12,7 +12,7 @@
         <input type="text" name="last_name">
         <br>
         <label for="date_of_birth">Born in:</label>
-        <input type="date" name="date_of_birth">
+        <input type="date" name="date_of_birth" >
         <br>
         <label for="height">Height:</label>
         <input type="number" name="height">
